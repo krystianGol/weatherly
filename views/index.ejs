@@ -1,1 +1,30 @@
-<%= data %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Weather app</title>
+</head>
+
+<body>
+    <% if (locals.data) { %>
+        <div class="weather-container">
+            <form class="another-city-form" action="/weather" method="POST">
+                <input class="input-another-city" type="text" name="anotherCity" placeholder="Enter city">
+                <button class="search-another-city-button">Search</button>
+            </form>
+        </div>
+        <% } else { %>
+            <div class="first-city-container">
+                <h1>Weather app</h1>
+                <form action="/weather" class="first-city-form" method="POST">
+                    <input type="text" name="city" placeholder="Enter city" class="input-container">
+                    <button class="search-button">Search</button>
+                </form>
+            </div>
+            <% } %>
+</body>
+
+</html>
