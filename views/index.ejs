@@ -18,75 +18,84 @@
                 </form>
                 <div class="current-weather">
                     <div class="temperature-div">
-                        <h1 class="city-name">London</h1>
-                        <p class="chance-of-rain-paragraph">Chance of rain 0%</p>
-                        <p>30C</p>
+                        <h1 class="city-name">
+                            <%= city %>
+                        </h1>
+                        <p class="weather-description">
+                            <%=data.list[0].weather[0].description%>
+                        </p>
+                        <h1>
+                            <%=Math.round(data.list[0].main.temp - 273.15)%> °C
+                        </h1>
                     </div>
                     <div class="weather-icon">
-                        <p>some ico</p>
+                        <img class="img-of-weather-icon" src=<%=currentWeathericonURL%>>
                     </div>
                 </div>
                 <div class="today-forecast">
-                    <p>Today's forecast</p>
-                    <ul>
-                        <li>
-                            <div class="forecast-weather-div">
-                                <p>6:00</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="forecast-weather-div">
-                                <p>6:00</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="forecast-weather-div">
-                                <p>6:00</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="forecast-weather-div">
-                                <p>6:00</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="forecast-weather-div">
-                                <p>6:00</p>
-                                <p>icon</p>
-                                <p>temp</p>
-                            </div>
-                        </li>
+                    <p>Next 24-hours forecast</p>
+                    <ul class="forecast-list">
+                        <% for(let i=1; i<8; i +=1) { %>
+                            <li>
+                                <div class="forecast-weather-div">
+                                    <p>
+                                        <%=data.list[i].dt_txt.slice(11,16)%>
+                                    </p>
+                                    <img src=<%=forecastIconUrls[i]%>>
+                                    <p>
+                                        <%=Math.round(data.list[i].main.temp - 273.15)%> °C
+                                    </p>
+                                </div>
+                            </li>
+                            <% } %>
                     </ul>
                 </div>
                 <div class="air-condition">
                     <p class="air-conditions-paragraph">Air conditions</p>
                     <div class="real-feel">
                         <p>Real Feel</p>
-                        <h3>Content</h3>
+                        <h3>
+                            <%=Math.round(data.list[0].main.feels_like - 273.15)%> °C
+                        </h3>
                     </div>
                     <div class="wind">
                         <p>Wind</p>
-                        <h3>Content</h3>
+                        <h3>
+                            <%=data.list[0].wind.speed%> m/s
+                        </h3>
                     </div>
                     <div class="chance-of-rain">
                         <p>Chance of Rain</p>
-                        <h3>Content</h3>
+                        <h3>
+                            <%=Math.round(data.list[0].pop * 100)%> %
+                        </h3>
                     </div>
-                    <div class="uv-index">
-                        <p>UV Index</p>
-                        <h3>Content</h3>
+                    <div class="humidity">
+                        <p>humidity</p>
+                        <h3>
+                            <%=data.list[0].main.humidity%> %
+                        </h3>
                     </div>
                 </div>
             </div>
-
+            <div class="five-day-forecast">
+                <p>5-day forecast</p>
+                <ul class="five-day-forecast-list">
+                    <% for(let i=0; i<5; i++){ %>
+                        <li>
+                            <div class="five-day-forecast-li">
+                                <p>
+                                    <%=daysOfTheWeek[i]%>
+                                </p>
+                                <img class="five-days-forecast-icon" src=<%=fiveDaysForecastIconsUrl[i]%>>
+                                <p>
+                                    <%=data.list[i*8].weather[0].description%>
+                                </p>
+                            </div>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
         </div>
         <% } else { %>
             <div class="first-city-container">

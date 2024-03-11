@@ -46,6 +46,8 @@ body {
     width: 70%;
     background-color: #112756;
     border-radius: 14px;
+    display: flex;
+    margin-top: 30px;
 }
 
 .main-content {
@@ -82,7 +84,6 @@ body {
     height: 160px;
     width: 95%;
     margin-left: 15px;
-
     display: flex;
     align-items: center;
 }
@@ -95,13 +96,19 @@ body {
 .weather-icon {
     width: 50%;
     height: 100%;
+    text-align: center;
+}
+
+.img-of-weather-icon {
+    height: 160px;
+
 }
 
 .city-name {
     margin-bottom: 0;
 }
 
-.chance-of-rain-paragraph {
+.weather-description {
     margin-top: 0;
 }
 
@@ -115,10 +122,12 @@ body {
     overflow-x: auto;
 }
 
-ul {
+.forecast-list {
     height: auto;
     display: flex;
     list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -131,6 +140,8 @@ li {
     width: auto;
     background-color: bisque;
     padding: 5px;
+    margin-right: 10px;
+    text-align: center;
 }
 
 .air-condition {
@@ -162,7 +173,7 @@ li {
 }
 
 .chance-of-rain,
-.uv-index {
+.humidity {
     height: 80px;
     flex-basis: calc(48% - 10px);
     background-color: bisque;
@@ -173,4 +184,28 @@ li {
 
 p {
     margin-top: 1px;
+}
+
+.five-day-forecast {
+    margin-top: 15px;
+}
+
+.five-day-forecast-list {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.five-day-forecast-li {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center
+}
+
+.five-day-forecast-li p {
+    margin-right: 10px;
+}
+
+.five-days-forecast-icon {
+    height: 100px;
+    width: 100px;
 }
