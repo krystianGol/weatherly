@@ -11,10 +11,82 @@
 <body>
     <% if (locals.data) { %>
         <div class="weather-container">
-            <form class="another-city-form" action="/weather" method="POST">
-                <input class="input-another-city" type="text" name="city" placeholder="Enter city">
-                <button class="search-another-city-button">Search</button>
-            </form>
+            <div class="main-content">
+                <form class="another-city-form" action="/weather" method="POST">
+                    <input class="input-another-city" type="text" name="city" placeholder="Enter city">
+                    <button class="search-another-city-button">Search</button>
+                </form>
+                <div class="current-weather">
+                    <div class="temperature-div">
+                        <h1 class="city-name">London</h1>
+                        <p class="chance-of-rain-paragraph">Chance of rain 0%</p>
+                        <p>30C</p>
+                    </div>
+                    <div class="weather-icon">
+                        <p>some ico</p>
+                    </div>
+                </div>
+                <div class="today-forecast">
+                    <p>Today's forecast</p>
+                    <ul>
+                        <li>
+                            <div class="forecast-weather-div">
+                                <p>6:00</p>
+                                <p>icon</p>
+                                <p>temp</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="forecast-weather-div">
+                                <p>6:00</p>
+                                <p>icon</p>
+                                <p>temp</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="forecast-weather-div">
+                                <p>6:00</p>
+                                <p>icon</p>
+                                <p>temp</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="forecast-weather-div">
+                                <p>6:00</p>
+                                <p>icon</p>
+                                <p>temp</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="forecast-weather-div">
+                                <p>6:00</p>
+                                <p>icon</p>
+                                <p>temp</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="air-condition">
+                    <p class="air-conditions-paragraph">Air conditions</p>
+                    <div class="real-feel">
+                        <p>Real Feel</p>
+                        <h3>Content</h3>
+                    </div>
+                    <div class="wind">
+                        <p>Wind</p>
+                        <h3>Content</h3>
+                    </div>
+                    <div class="chance-of-rain">
+                        <p>Chance of Rain</p>
+                        <h3>Content</h3>
+                    </div>
+                    <div class="uv-index">
+                        <p>UV Index</p>
+                        <h3>Content</h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <% } else { %>
             <div class="first-city-container">

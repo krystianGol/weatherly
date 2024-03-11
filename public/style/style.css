@@ -42,15 +42,25 @@ body {
 }
 
 .weather-container {
-    height: 80%;
+    height: auto;
     width: 70%;
     background-color: #112756;
     border-radius: 14px;
 }
 
+.main-content {
+    height: auto;
+    background-color: aqua;
+    width: 70%;
+}
+
+.another-city-form {
+    width: 100%;
+}
+
 .input-another-city {
     height: auto;
-    width: 65%;
+    width: 87%;
     background-color: aliceblue;
     margin-top: 8px;
     margin-left: 15px;
@@ -62,6 +72,105 @@ body {
 .search-another-city-button {
     height: auto;
     padding: 7px;
+    margin-right: 0;
     border-radius: 8px;
     border: none;
+}
+
+.current-weather {
+    background-color: aliceblue;
+    height: 160px;
+    width: 95%;
+    margin-left: 15px;
+
+    display: flex;
+    align-items: center;
+}
+
+.temperature-div {
+    width: 50%;
+    height: 100%;
+}
+
+.weather-icon {
+    width: 50%;
+    height: 100%;
+}
+
+.city-name {
+    margin-bottom: 0;
+}
+
+.chance-of-rain-paragraph {
+    margin-top: 0;
+}
+
+.today-forecast {
+    background-color: #184ec4;
+    width: 89%;
+    margin-left: 15px;
+    padding: 10px;
+    padding-right: 0;
+    border-radius: 14px;
+    overflow-x: auto;
+}
+
+ul {
+    height: auto;
+    display: flex;
+    list-style-type: none;
+}
+
+
+li {
+    margin-right: 15px;
+}
+
+
+.forecast-weather-div {
+    width: auto;
+    background-color: bisque;
+    padding: 5px;
+}
+
+.air-condition {
+    background-color: #184ec4;
+    width: 89%;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    padding: 10px;
+    padding-right: 0;
+    border-radius: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.air-conditions-paragraph {
+    margin-top: 0;
+    width: 100%;
+}
+
+.real-feel,
+.wind {
+    flex-basis: calc(48% - 10px);
+    text-align: center;
+    background-color: bisque;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.chance-of-rain,
+.uv-index {
+    height: 80px;
+    flex-basis: calc(48% - 10px);
+    background-color: bisque;
+    text-align: center;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+p {
+    margin-top: 1px;
 }
