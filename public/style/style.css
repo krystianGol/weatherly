@@ -4,13 +4,16 @@ html {
 
 body {
     margin: 0;
-    /* Remove default body margin */
     height: 100%;
     background: url("/img/background-img.jpg") center/cover fixed;
-    /* Set background shorthand */
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Madimi One", sans-serif;
+}
+
+.app-name {
+    padding-top: 30px;
 }
 
 
@@ -33,6 +36,7 @@ body {
     border: none;
     margin-bottom: 20px;
     font-size: 14px;
+    font-family: "Madimi One", sans-serif;
 }
 
 .input-container:focus {
@@ -42,12 +46,13 @@ body {
 .search-button {
     background-color: white;
     border-radius: 8px;
-    padding-right: 30px;
+    padding-right: 39px;
     padding-left: 30px;
     padding-top: 12px;
     padding-bottom: 12px;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
+    font-family: "Madimi One", sans-serif;
 }
 
 .search-button:hover {
@@ -59,7 +64,7 @@ body {
 .weather-container {
     height: auto;
     width: 80%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 11px;
     padding-bottom: 20px;
@@ -91,6 +96,7 @@ body {
     border-radius: 8px;
     border: none;
     padding: 9px;
+    font-family: "Madimi One", sans-serif;
 }
 
 .input-another-city:focus {
@@ -104,6 +110,7 @@ body {
     margin-right: 0;
     border-radius: 8px;
     border: none;
+    font-family: "Madimi One", sans-serif;
 }
 
 .search-another-city-button:hover {
@@ -145,12 +152,13 @@ body {
 
 .weather-description {
     margin-top: 0;
-    color: rgb(204, 203, 203);
+    color: rgb(215, 214, 214);
     font-weight: bold;
+    font-size: 17px;
 }
 
 .today-forecast {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     width: 89%;
     margin-left: 15px;
     padding: 10px;
@@ -163,7 +171,8 @@ body {
 .forecast-paragraph {
     color: rgb(59, 59, 59);
     font-weight: bold;
-    padding-left: 10px;
+    padding-left: 20px;
+    margin-bottom: 0;
 }
 
 .today-forecast:hover {
@@ -222,7 +231,7 @@ li {
 }
 
 .air-condition {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     color: rgb(59, 59, 59);
     width: 89%;
     margin-top: 5px;
@@ -237,8 +246,10 @@ li {
 .air-conditions-paragraph {
     color: rgb(59, 59, 59);
     font-weight: bold;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     width: 100%;
 }
 
@@ -261,10 +272,11 @@ li {
     margin-right: 5px;
     padding-top: 0;
     margin-top: 0;
+    margin-bottom: 15px;
 }
 
 .content-of-coditions {
-    font-size: 35px;
+    font-size: 38px;
     color: rgb(59, 59, 59);
     font-weight: bold;
     margin-top: 0px;
@@ -276,15 +288,17 @@ p {
 
 .five-day-forecast {
     margin-top: 5px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 14px;
 }
 
 .five-day-forecast-paragraph {
     color: rgb(59, 59, 59);
+    font-size: 17px;
     font-weight: bold;
     padding-left: 20px;
     padding-top: 10px;
+    margin-bottom: 0;
 }
 
 .five-day-forecast-list {
@@ -303,9 +317,32 @@ p {
 .days-of-the-week {
     width: 120px;
     color: #5f5f5f;
+    font-size: 18px;
 }
 
 .five-days-forecast-icon {
     height: 100px;
     width: 100px;
+}
+
+.hr {
+    border: none;
+    border-top: 1px solid #000000;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+.forecast-hr {
+    width: 1050px;
+    margin-left: 20px;
+}
+
+.icon {
+    margin-right: 7px;
+}
+
+.conditions-paragraphs {
+    font-size: 19px;
 }
