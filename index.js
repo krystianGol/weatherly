@@ -1,10 +1,13 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import dotenv from 'dotenv';
 
 const app = express();
 const port = 3000;
-const API_KEY = "0227f9f67a8f81150432bd9213ffc06d";
+dotenv.config();
+
+const API_KEY = process.env.API_KEY;
 const currentDate = new Date();
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const currentDayIndex = currentDate.getDay();
@@ -44,7 +47,6 @@ app.post('/weather', async (req, res) => {
     const API_URL = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
     try {
         const response = await axios.get(API_URL);
-        //response.data.list[0].weather[0].description
         data = response.data;
 
         currentWeathericonURL = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`;
