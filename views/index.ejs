@@ -12,7 +12,7 @@
     <% if (locals.data) { %>
         <div class="weather-container">
             <div class="main-content">
-                <form class="another-city-form" action="/weather" method="POST">
+                <form class="another-city-form" action="/weather" method="POST" required>
                     <input class="input-another-city" type="text" name="city" placeholder="Enter city">
                     <button class="search-another-city-button">Search</button>
                 </form>
@@ -24,26 +24,26 @@
                         <p class="weather-description">
                             <%=data.list[0].weather[0].description%>
                         </p>
-                        <h1>
+                        <h1 class="current-weather-temp">
                             <%=Math.round(data.list[0].main.temp - 273.15)%> °C
                         </h1>
                     </div>
-                    <div class="weather-icon">
+                    <div class="weather-icon-container">
                         <img class="img-of-weather-icon" src=<%=currentWeathericonURL%>>
                     </div>
                 </div>
                 <div class="today-forecast">
-                    <p>Next 24-hours forecast</p>
+                    <p class="forecast-paragraph">Next 24-hours forecast</p>
                     <ul class="forecast-list">
-                        <% for(let i=1; i<8; i +=1) { %>
+                        <% for(let i=1; i<9; i +=1) { %>
                             <li>
                                 <div class="forecast-weather-div">
-                                    <p>
+                                    <p class="forecast-time">
                                         <%=data.list[i].dt_txt.slice(11,16)%>
                                     </p>
                                     <img src=<%=forecastIconUrls[i]%>>
-                                    <p>
-                                        <%=Math.round(data.list[i].main.temp - 273.15)%> °C
+                                    <p class="forecast-temp">
+                                        <%=Math.round(data.list[i].main.temp - 273.15)%>°
                                     </p>
                                 </div>
                             </li>
@@ -54,41 +54,41 @@
                     <p class="air-conditions-paragraph">Air conditions</p>
                     <div class="real-feel">
                         <p>Real Feel</p>
-                        <h3>
-                            <%=Math.round(data.list[0].main.feels_like - 273.15)%> °C
+                        <h3 class="content-of-coditions">
+                            <%=Math.round(data.list[0].main.feels_like - 273.15)%>°
                         </h3>
                     </div>
                     <div class="wind">
                         <p>Wind</p>
-                        <h3>
+                        <h3 class="content-of-coditions">
                             <%=data.list[0].wind.speed%> m/s
                         </h3>
                     </div>
                     <div class="chance-of-rain">
                         <p>Chance of Rain</p>
-                        <h3>
+                        <h3 class="content-of-coditions">
                             <%=Math.round(data.list[0].pop * 100)%> %
                         </h3>
                     </div>
                     <div class="humidity">
                         <p>humidity</p>
-                        <h3>
+                        <h3 class="content-of-coditions">
                             <%=data.list[0].main.humidity%> %
                         </h3>
                     </div>
                 </div>
             </div>
             <div class="five-day-forecast">
-                <p>5-day forecast</p>
+                <p class="five-day-forecast-paragraph">5-day forecast</p>
                 <ul class="five-day-forecast-list">
                     <% for(let i=0; i<5; i++){ %>
                         <li>
                             <div class="five-day-forecast-li">
-                                <p>
+                                <p class="days-of-the-week">
                                     <%=daysOfTheWeek[i]%>
                                 </p>
                                 <img class="five-days-forecast-icon" src=<%=fiveDaysForecastIconsUrl[i]%>>
-                                <p>
+                                <p class="five-days-forecast-description">
                                     <%=data.list[i*8].weather[0].description%>
                                 </p>
                             </div>
@@ -101,7 +101,7 @@
             <div class="first-city-container">
                 <h1>Weather app</h1>
                 <form action="/weather" class="first-city-form" method="POST">
-                    <input type="text" name="city" placeholder="Enter city" class="input-container">
+                    <input type="text" name="city" placeholder="Enter city" class="input-container" required>
                     <button class="search-button">Search</button>
                 </form>
             </div>

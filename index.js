@@ -49,7 +49,7 @@ app.post('/weather', async (req, res) => {
 
         currentWeathericonURL = `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@4x.png`;
 
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 9; i++) {
             forecastIconUrls.push(`https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`);
         }
 
